@@ -1,0 +1,184 @@
+.ticket_system {
+  max-width: 385px;
+  /* width: 385px; */
+}
+.ticket_system .top {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.ticket_system .top .title {
+  font-weight: normal;
+  font-size: 1.6em;
+  text-align: left;
+  margin-left: 20px;
+  margin-bottom: 50px;
+  color: #fff;
+}
+.ticket_system .top .printer {
+  width: 90%;
+  height: 20px;
+  border: 5px solid #fff;
+  border-radius: 10px;
+  box-shadow: 1px 3px 3px 0px rgba(0, 0, 0, 0.2);
+}
+.ticket_system .receipts_wrapper {
+  overflow: hidden;
+  margin-top: -10px;
+  padding-bottom: 10px;
+}
+.ticket_system .receipts {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transform: translateY(-510px);
+  animation-duration: 3s;
+  animation-delay: 500ms;
+  animation-name: print;
+  animation-fill-mode: forwards;
+}
+.ticket_system .receipts .receipt {
+  padding: 25px 30px;
+  text-align: left;
+  min-height: 200px;
+  width: 88%;
+  background-color: #fff;
+  border-radius: 10px 10px 20px 20px;
+  box-shadow: 1px 3px 8px 3px rgba(0, 0, 0, 0.2);
+}
+
+.ticket_system .receipts .receipt .route {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 0;
+}
+.ticket_system .receipts .receipt .route .plane-icon {
+  width: 30px;
+  height: 30px;
+  transform: rotate(90deg);
+}
+.ticket_system .receipts .receipt .route h2 {
+  font-weight: 300;
+  font-size: 2.2em;
+  margin: 0;
+}
+.ticket_system .receipts .receipt .details {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.ticket_system .receipts .receipt .details .item {
+  display: flex;
+  flex-direction: column;
+  min-width: 70px;
+}
+.ticket_system .receipts .receipt .details .item span {
+  font-size: 0.8em;
+  font-weight: bold;
+  color: purple;
+}
+.ticket_system .receipts .receipt .details .item h3 {
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+.ticket_system .receipts .receipt.qrcode {
+  height: 110px;
+  min-height: unset;
+  position: relative;
+  border-radius: 20px 20px 10px 10px;
+  display: flex;
+  align-items: center;
+}
+.ticket_system .receipts .receipt.qrcode::before {
+  content: "";
+  background: linear-gradient(to right, #fff 50%, #3f32e5 50%);
+  background-size: 22px 4px, 100% 4px;
+  height: 4px;
+  width: 90%;
+  display: block;
+  left: 0;
+  right: 0;
+  top: -1px;
+  position: absolute;
+  margin: auto;
+}
+.ticket_system .receipts .receipt.qrcode .qr {
+  width: 70px;
+  height: 70px;
+}
+.ticket_system .receipts .receipt.qrcode .description {
+  margin-left: 20px;
+}
+.ticket_system .receipts .receipt.qrcode .description h2 {
+  margin: 0 0 5px 0;
+  font-weight: 500;
+}
+.ticket_system .receipts .receipt.qrcode .description p {
+  margin: 0;
+  font-weight: 400;
+}
+@keyframes print {
+  0% {
+    transform: translateY(-510px);
+  }
+  35% {
+    transform: translateY(-395px);
+  }
+  70% {
+    transform: translateY(-140px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* CSS */
+.button {
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0 auto;
+  min-height: 3rem;
+  padding: calc(0.875rem - 1px) calc(1.5rem - 1px);
+  /* position: relative; */
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: 100px;
+}
+
+.button:hover,
+.button:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button:active {
+  background-color: #f0f0f1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
+}
